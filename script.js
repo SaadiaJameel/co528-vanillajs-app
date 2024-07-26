@@ -54,7 +54,8 @@ document.querySelector("#angle-textbox").addEventListener("click", (e) =>{
     updateRadio(angleInput);
     updateText(angleInput);
     if(angleInput > 180){
-        updateSlider(180- angleInput);
+        // updateSlider(180- angleInput);
+        updateSlider(angleInput-360);
     }else{
         updateSlider(angleInput);
     }
@@ -69,7 +70,8 @@ document.querySelector('#angleSlider').addEventListener("input", (e)=>{
     if (isNaN(angleInput)) {
         angleInput = 0;
     } else if (angleInput < 0){
-        angleInput = (-1 * angleInput) + 180;
+        // angleInput = (-1 * angleInput) + 180;
+        angleInput = 360 + angleInput;
     }
 
     updateRadio(angleInput);
@@ -83,7 +85,8 @@ document.querySelectorAll('input[name="angle"]').forEach((radio) => {
         let angleInput = e.target.value;
 
         if(angleInput > 180){
-            updateSlider(180- angleInput);
+            // updateSlider(180- angleInput);
+            updateSlider(angleInput-360);
         }else{
             updateSlider(angleInput);
         }
